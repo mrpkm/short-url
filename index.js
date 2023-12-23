@@ -45,13 +45,7 @@ conectToMongo('mongodb://localhost:27017/sort-url-pk').then(() => console.log("c
 app.use('/url', urlRouter);
 app.use('/user', userRouter)
 
-app.get('/:shortId', async (req, res) => {
-    const shortId = req.params.shortId;
-    const entry = await URL.findOne({
-        shortId
-    })
-    res.redirect(entry.redirectUrl)
-})
+
 
 app.listen(PORT, () => {
     console.log(`server is running port :: ${PORT}`)

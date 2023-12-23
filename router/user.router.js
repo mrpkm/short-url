@@ -5,13 +5,13 @@ const router = express.Router();
 
 const userController = require('../controller/user.controller')
 
-router.post('/singin', passport.authenticate(
+router.post('/signin', passport.authenticate(
     'local',
     // { failureRedirect: '/user/singin' }
     { failureMessage: 'user not found   ' }
 ), userController.createSession);
 
-router.post('/singup', userController.create);
+router.post('/signup', userController.create);
 
 
 module.exports = router;
